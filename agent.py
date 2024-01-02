@@ -74,7 +74,7 @@ class Agent:
         used_time_steps = time_steps[teta : min(T, teta + N_STEP) + 1]
         if self.use_per_decision_importance_ratio:
             importance_ratio_factors = self._compute_per_decision_importance_ratios(
-                time_steps
+                used_time_steps
             )
             self.v[teta] += ALPHA * sum(
                 [
